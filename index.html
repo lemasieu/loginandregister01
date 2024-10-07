@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng nhập hoặc đăng ký</title>
+    <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="source.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box hopdangnhap">
+            <div class="details dtdangnhap">
+                <h2>Đăng nhập</h2>
+                <div class="box-wrapper">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" placeholder="Tên đăng nhập">
+                </div>
+                <div class="box-wrapper">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" placeholder="Mật khẩu">
+                </div>
+                <table border="0" width="100%">
+                    <tr>
+                    <td width="6%"><input id="remember" class="remember" type="checkbox"></td>
+                    <td width="50%">Ghi nhớ đăng nhập</td>
+                    <td width="44%" style="text-align: right;"><a href="#">Quên mật khẩu?</a></td>
+                    </tr>
+                </table>
+                <button id="login">Đăng nhập</button>
+                <p>Chưa có tài khoản? <a href="#" id="nhayphai">Đăng ký</a></p>
+            </div>
+        
+        <div class="hopdangky">
+            <div class="details dtdangky">
+                <h2>Đăng ký</h2>
+                <div class="box-wrapper">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" placeholder="Tên đăng nhập">
+                </div>
+                <div class="box-wrapper">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" placeholder="Mật khẩu">
+                </div>
+                <div class="box-wrapper">
+                    <label for="email">Địa chỉ email</label>
+                    <input type="email" placeholder="Địa chỉ email">
+                </div>
+                <button id="register">Đăng ký</button>
+                <p>Đã có tài khoản? <a href="#" id="nhaytrai">Đăng nhập</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

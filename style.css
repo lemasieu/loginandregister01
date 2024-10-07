@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap');
+
+*{
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .6s;
+}
+
+html,body{
+    height: 100%;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.box{
+    height: 500px;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px soild #fff;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.details{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4%;
+}
+
+.hopdangnhap{
+    padding: 4%;
+}
+
+.box-wrapper{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+input{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+    padding: 0 8px;
+    border-radius: 5px;
+}
+
+.remember{
+    height: 20px;
+}
+
+.box-wrapper:hover input::placeholder{
+    position: absolute;
+    top: -12px;
+    opacity: 0;
+}
+
+label{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+}
+
+.box-wrapper:hover label{
+    top: -25px;
+    opacity: 1;
+}
+
+button{
+    height: 50px;
+    width: 100%;
+    border: none;
+    background-color:darkblue;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+}
+
+h2{
+    color: #000;
+    font-size: 2.7rem;
+}
+
+p, p a{
+    color: #000;
+    letter-spacing: 0.12;
+}
+
+p a{
+    color: blue;
+    font-weight: 600;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+a{
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgba(200, 6, 200, 0.8);
+}
+
+button:hover{
+    background-color: rgba(200, 6, 200, 0.8);
+}
+
+.dtdangnhap{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12% 15%;
+
+}
+
+.dtdangky{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    padding: 12% 15%;
+}
+
+.hiendk{
+    right: 100%;
+}
+
+.andk{
+    right: 0%;
+}
+
+@media (max-width: 500px){
+    .box{
+        width: 330px;
+    }
+    .dtdangnhap{
+        padding: 16% 8%;
+    }
+    .dtdangky{
+        padding: 18% 10%;
+    }
+}
