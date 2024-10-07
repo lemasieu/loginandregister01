@@ -31,7 +31,6 @@
                     </tr>
                 </table>
                 <button id="login">Đăng nhập</button>
-                <div id="login-error-message" style="color: red; display: none;"></div>
                 <p>Chưa có tài khoản? <a href="#" id="nhayphai">Đăng ký</a></p>
             </div>
         
@@ -52,8 +51,17 @@
                     <input type="email" id="emaildk" placeholder="Địa chỉ email" required>
                 </div>
                 <button id="register">Đăng ký</button>
-                <div id="register-error-message" style="color: red; display: none;"></div>
                 <p>Đã có tài khoản? <a href="#" id="nhaytrai">Đăng nhập</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="register-error-popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopupBtn" class="close-btn">&times;</span>
+            <div class="popup-message">
+                <!-- Icon FontAwesome -->
+                <i class="bi bi-send-x"></i>
+                <p id="register-error-message" style="color: red;"></p>
             </div>
         </div>
     </div>

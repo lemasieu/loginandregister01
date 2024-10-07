@@ -173,3 +173,50 @@ button:hover{
     transform: translateY(-50%); /* Điều chỉnh để căn giữa hoàn hảo */
     cursor: pointer; /* Con trỏ chuột */
 }
+
+/* Pop-up mặc định ẩn */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nội dung pop-up */
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 500px; /* Mở rộng pop-up */
+    text-align: left; /* Canh trái nội dung */
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Khu vực hiển thị thông báo lỗi */
+.popup-message {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px; /* Khoảng cách giữa icon và thông báo lỗi */
+}
+
+/* Icon lỗi */
+.error-icon {
+    font-size: 40px; /* Kích thước icon */
+    color: red;
+}
+
+/* Nút đóng */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}

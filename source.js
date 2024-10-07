@@ -37,58 +37,77 @@ document.querySelectorAll(".field-icon").forEach(function(element) {
     });
 });
 
+// Kiểm tra email hợp lệ
 function isValidEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Biểu thức chính quy kiểm tra email
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(String(email).toLowerCase());
 }
 
+// Lắng nghe sự kiện khi nhấn nút Đăng nhập
 document.getElementById("login").addEventListener("click", function(event) {
     const username = document.getElementById("usernamedn");
     const password = document.getElementById("passworddn");
-    const errorMessage = document.getElementById("login-error-message");
+    const errorMessage = document.getElementById("register-error-message");
+    const popup = document.getElementById("register-error-popup");
 
     let valid = true;
-    errorMessage.style.display = "none"; // Ẩn thông báo trước khi kiểm tra
+    errorMessage.innerText = ''; // Xóa thông báo lỗi cũ
+    popup.style.display = 'none'; // Ẩn pop-up trước khi kiểm tra
 
     if (!username.value) {
         valid = false;
-        errorMessage.innerText = "Tên đăng nhập là bắt buộc.";
+        errorMessage.innerText = "Lỗi: Chưa nhập tên đăng nhập.";
     } else if (!password.value) {
         valid = false;
-        errorMessage.innerText = "Mật khẩu là bắt buộc.";
+        errorMessage.innerText = "Lỗi: Chưa nhập mật khẩu.";
     }
 
     if (!valid) {
-        event.preventDefault(); // Ngăn chặn gửi biểu mẫu
-        errorMessage.style.display = "block"; // Hiện thông báo lỗi
+        event.preventDefault(); // Ngừng gửi biểu mẫu
+        popup.style.display = 'flex'; // Hiện pop-up thông báo lỗi
     }
 });
 
+// Lắng nghe sự kiện khi nhấn nút Đăng ký
 document.getElementById("register").addEventListener("click", function(event) {
     const username = document.getElementById("usernamedk");
     const password = document.getElementById("passworddk");
     const email = document.getElementById("emaildk");
     const errorMessage = document.getElementById("register-error-message");
+    const popup = document.getElementById("register-error-popup");
 
     let valid = true;
-    errorMessage.style.display = "none"; // Ẩn thông báo trước khi kiểm tra
+    errorMessage.innerText = ''; // Xóa thông báo lỗi cũ
+    popup.style.display = 'none'; // Ẩn pop-up trước khi kiểm tra
 
     if (!username.value) {
         valid = false;
-        errorMessage.innerText = "Tên đăng nhập là bắt buộc.";
+        errorMessage.innerText = "Lỗi: Chưa nhập tên đăng nhập.";
     } else if (!password.value) {
         valid = false;
-        errorMessage.innerText = "Mật khẩu là bắt buộc.";
+        errorMessage.innerText = "Lỗi: Chưa nhập mật khẩu.";
     } else if (!email.value) {
         valid = false;
-        errorMessage.innerText = "Địa chỉ email là bắt buộc.";
+        errorMessage.innerText = "Lỗi: Chưa nhập địa chỉ email.";
     } else if (!isValidEmail(email.value)) {
         valid = false;
-        errorMessage.innerText = "Địa chỉ email không hợp lệ.";
+        errorMessage.innerText = "Lỗi: Địa chỉ email không hợp lệ.";
     }
 
     if (!valid) {
-        event.preventDefault(); // Ngăn chặn gửi biểu mẫu
-        errorMessage.style.display = "block"; // Hiện thông báo lỗi
+        event.preventDefault(); // Ngừng gửi biểu mẫu
+        popup.style.display = 'flex'; // Hiện pop-up thông báo lỗi
+    }
+});
+
+// Đóng pop-up khi nhấn vào nút X
+document.getElementById("closePopupBtn").addEventListener("click", function() {
+    document.getElementById("register-error-popup").style.display = 'none';
+});
+
+// Đóng pop-up nếu người dùng nhấp ra ngoài vùng pop-up
+window.addEventListener("click", function(event) {
+    if (event.target === document.getElementById("register-error-popup")) {
+        document.getElementById("register-error-popup").style.display = 'none';
     }
 });
