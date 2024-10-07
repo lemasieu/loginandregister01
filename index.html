@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Đăng nhập hoặc đăng ký</title>
-    <link rel="shortcut icon" href="//favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="source.js" defer></script>
 </head>
@@ -16,11 +16,12 @@
                 <h2>Đăng nhập</h2>
                 <div class="box-wrapper">
                     <label for="username">Tên đăng nhập</label>
-                    <input type="text" placeholder="Tên đăng nhập">
+                    <input type="text" id="usernamedn" placeholder="Tên đăng nhập" required>
                 </div>
                 <div class="box-wrapper">
                     <label for="password">Mật khẩu</label>
-                    <input type="password" placeholder="Mật khẩu">
+                    <span toggle="#passworddn" class="field-icon"><i class="bi bi-eye-fill"></i></span>
+                    <input type="password" id="passworddn" placeholder="Mật khẩu" required>
                 </div>
                 <table border="0" width="100%">
                     <tr>
@@ -30,6 +31,7 @@
                     </tr>
                 </table>
                 <button id="login">Đăng nhập</button>
+                <div id="login-error-message" style="color: red; display: none;"></div>
                 <p>Chưa có tài khoản? <a href="#" id="nhayphai">Đăng ký</a></p>
             </div>
         
@@ -38,17 +40,19 @@
                 <h2>Đăng ký</h2>
                 <div class="box-wrapper">
                     <label for="username">Tên đăng nhập</label>
-                    <input type="text" placeholder="Tên đăng nhập">
+                    <input type="text" id="usernamedk" placeholder="Tên đăng nhập" required>
                 </div>
                 <div class="box-wrapper">
                     <label for="password">Mật khẩu</label>
-                    <input type="password" placeholder="Mật khẩu">
+                    <span toggle="#passworddk" class="field-icon"><i class="bi bi-eye-fill"></i></span>
+                    <input type="password" id="passworddk" placeholder="Mật khẩu" required>
                 </div>
                 <div class="box-wrapper">
                     <label for="email">Địa chỉ email</label>
-                    <input type="email" placeholder="Địa chỉ email">
+                    <input type="email" id="emaildk" placeholder="Địa chỉ email" required>
                 </div>
                 <button id="register">Đăng ký</button>
+                <div id="register-error-message" style="color: red; display: none;"></div>
                 <p>Đã có tài khoản? <a href="#" id="nhaytrai">Đăng nhập</a></p>
             </div>
         </div>
